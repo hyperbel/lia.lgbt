@@ -1,0 +1,46 @@
+body {
+    font-family: 'defaultFont', monospace;
+}
+
+/* navi bar */
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type=radio]:checked + label {
+    text-decoration: underline;
+}
+
+article {
+    display: none;
+}
+
+#home_button:checked ~ #home {
+    display: block;
+}
+
+#coding_button:checked ~ #coding {
+    display: block;
+}
+
+#writing_button:checked ~ #writing {
+    display: block;
+}
+
+#blog_button:checked ~ #blog {
+    display: block;
+}
+
+#about_button:checked ~ #about {
+    display: block;
+}
+
+nav {
+    display: grid;
+}
