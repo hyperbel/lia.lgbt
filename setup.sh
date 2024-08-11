@@ -4,6 +4,7 @@ OUT_DIR=out
 FILENAME=test.html
 NAV_FILENAME=nav.html.part
 CONTENT_DIR=content
+STRUCTURE_DIR=structure
 
 
 OUT_FILE=$OUT_DIR/$FILENAME
@@ -20,13 +21,13 @@ build_nav() {
 }
 
 
-build_nav && cat head.html.part \
+build_nav && cat $STRUCTURE_DIR/head.html.part \
 		$OUT_DIR/$NAV_FILENAME > $OUT_FILE
 
 if [ ! -z $2 ]; then
 	cat content/$1.html >> $OUT_FILE
 fi
 
-cat footer.html.part \
-	script.html.part \
-	end.html.part >> $OUT_FILE
+cat $STRUCTURE_DIR/footer.html.part \
+	$STRUCTURE_DIR/script.html.part \
+	$STRUCTURE_DIR/end.html.part >> $OUT_FILE
