@@ -43,9 +43,13 @@ if [ ! -z $1 ]; then
 	cat content/$1.html >> $OUT_FILE
 fi
 
-cat $STRUCTURE_DIR/footer.html.part \
-	$STRUCTURE_DIR/script.html.part \
-	$STRUCTURE_DIR/end.html.part >> $OUT_FILE
+cat $STRUCTURE_DIR/footer.html.part >> $OUT_FILE
+if [ ! -z $1 ]; then
+    . ./scripts.sh $OUT_FILE $1
+fi
+
+cat $STRUCTURE_DIR/scripts.html.part >> $OUT_FILE
+cat $STRUCTURE_DIR/end.html.part >> $OUT_FILE
 
 if [ ! -z $1 ]; then
     firefox $OUT_FILE &
