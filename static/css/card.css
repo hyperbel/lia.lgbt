@@ -1,6 +1,8 @@
 main { 
   height: 98vh;
   position: relative;
+  font-size: 1.5em;
+  text-wrap: wrap;
 }
 
 #card {
@@ -19,15 +21,17 @@ main {
 }
 
 details > summary {
-    background: url(../img/folder-closed-25x25.png) no-repeat;
-    list-style-image: url(../img/folder-closed-25x25.png) no-repeat;
+    background: url(../img/folder-closed-50x50.png) no-repeat;
+    list-style-image: url(../img/folder-closed-50x50.png) no-repeat;
     display: block;
-    padding-left: 30px;
+    padding-left: 60px;
+    padding-bottom: 10px;
 }
 
 details[open] > summary {
-    background: url(../img/folder-open-25x25.png) no-repeat;
-    list-style-image: url(../img/folder-open-25x25.png) no-repeat;
+    background: url(../img/folder-open-50x50.png) no-repeat;
+    list-style-image: url(../img/folder-open-50x50.png) no-repeat;
     display: block;
-    padding-left: 30px;
+    padding-left: 60px;
+    padding-bottom: 10px;
 }
