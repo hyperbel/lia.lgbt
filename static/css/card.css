@@ -22,12 +22,12 @@ details > summary {
     background: url(../img/folder-closed-25x25.png) no-repeat;
     list-style-image: url(../img/folder-closed-25x25.png) no-repeat;
     display: block;
-    padding-left: 25px;
+    padding-left: 30px;
 }
 
 details[open] > summary {
     background: url(../img/folder-open-25x25.png) no-repeat;
     list-style-image: url(../img/folder-open-25x25.png) no-repeat;
     display: block;
-    padding-left: 25px;
+    padding-left: 30px;
 }
