@@ -9,6 +9,10 @@ STRUCTURE_DIR=structure
 
 OUT_FILE=$OUT_DIR/$FILENAME
 
+if [ ! -d "$OUT_DIR" ]; then
+    mkdir $OUT_DIR
+fi
+
 if [ ! -z $1 ]; then
     if [ ! -f $CONTENT_DIR/$1.html ]; then
         echo "file $1.html not found"
@@ -52,6 +56,6 @@ cat $STRUCTURE_DIR/scripts.html.part >> $OUT_FILE
 cat $STRUCTURE_DIR/end.html.part >> $OUT_FILE
 
 if [ ! -z $1 ]; then
-    firefox $OUT_FILE &
+    firefox $OUT_FILE >> /dev/null &
     disown -a
 fi
