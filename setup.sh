@@ -5,6 +5,7 @@ FILENAME=test.html
 NAV_FILENAME=nav.html.part
 CONTENT_DIR=content
 STRUCTURE_DIR=structure
+STATIC_DIR=static
 
 
 OUT_FILE=$OUT_DIR/$FILENAME
@@ -52,8 +53,10 @@ if [ ! -z $1 ]; then
     . ./scripts.sh $OUT_FILE $1
 fi
 
-cat $STRUCTURE_DIR/scripts.html.part >> $OUT_FILE
+cat $STRUCTURE_DIR/script.html.part >> $OUT_FILE
 cat $STRUCTURE_DIR/end.html.part >> $OUT_FILE
+
+cp -rf $STATIC_DIR $OUT_DIR/
 
 if [ ! -z $1 ]; then
     firefox $OUT_FILE >> /dev/null &
