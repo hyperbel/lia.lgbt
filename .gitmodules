@@ -1,0 +1,3 @@
+[submodule "lia.lgbt-out"]
+	path = lia.lgbt-out
+	url = git@github.com:hyperel/lia.lgbt-out.git
