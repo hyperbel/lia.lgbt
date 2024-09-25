@@ -1,7 +1,7 @@
 #!/bin/sh
 
 OUT_DIR=out
-FILENAME=test.html
+FILENAME=index.html
 NAV_FILENAME=nav.html.part
 CONTENT_DIR=content
 STRUCTURE_DIR=structure
@@ -31,18 +31,18 @@ echo "output file: $OUT_FILE"
 CONTENT=$(ls $CONTENT_DIR | awk -F"." '{ print $1 " " }')
 
 build_nav() {
-	echo -e \\t\<nav\>\\n\\t\\t\<ul\> > $OUT_DIR/$NAV_FILENAME
+	echo -e \\t\<nav\>\\n\\t\\t\<ul\> > $STRUCTURE_DIR/$NAV_FILENAME
 	for value in ${CONTENT[@]}
 	do
-		echo -e "\t\t\t<li\><a href="/$value.html"\>$value</a\></li\>" | sed 's/\\>/>/g' >> $OUT_DIR/$NAV_FILENAME
+		echo -e "\t\t\t<li\><a href="/$value.html"\>$value</a\></li\>" | sed 's/\\>/>/g' >> $STRUCTURE_DIR/$NAV_FILENAME
 	done
-	echo -e \\t\\t\</ul\>\\n\\t\</nav\> >> $OUT_DIR/$NAV_FILENAME
+	echo -e \\t\\t\</ul\>\\n\\t\</nav\> >> $STRUCTURE_DIR/$NAV_FILENAME
 }
 
 
 
 build_nav && cat $STRUCTURE_DIR/head.html.part \
-		$OUT_DIR/$NAV_FILENAME > $OUT_FILE
+		$STRUCTURE_DIR/$NAV_FILENAME > $OUT_FILE
 
 if [ ! -z $1 ]; then
 	cat content/$1.html >> $OUT_FILE
