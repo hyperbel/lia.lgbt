@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OUT_DIR=out
+OUT_DIR=lia.lgbt-out
 FILENAME=index.html
 NAV_FILENAME=nav.html.part
 CONTENT_DIR=content
